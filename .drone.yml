@@ -5,7 +5,7 @@ name: default
 steps:
 - name: test
   pull: if-not-exists
-  image: dockerhub.mizki.one/docker
+  image: docker
   volumes:
       - name: docker_sock
         path: /var/run/docker.sock
