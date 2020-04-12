@@ -5,5 +5,8 @@ name: default
 steps:
 - name: test
   image: dockerhub.mizki.one/docker
+  volumes:
+      - name: docker_sock
+        path: /var/run/docker.sock
   commands:
   - docker version
