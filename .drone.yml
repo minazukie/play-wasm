@@ -1,16 +1,26 @@
-kind: pipeline
-# type: kubernetes
-name: default
-volumes:
-- name: docker_sock
-  host:
-    path: /var/run/docker.sock
-steps:
-- name: test
-  image: docker
-  volumes:
-    - name: docker_sock
-      path: /var/run/docker.sock
-  commands:
-  - docker version
-  - env
+# kind: pipeline
+# # type: kubernetes
+# name: default
+# volumes:
+# - name: docker_sock
+#   host:
+#     path: /var/run/docker.sock
+# steps:
+# - name: test
+#   image: docker
+#   volumes:
+#     - name: docker_sock
+#       path: /var/run/docker.sock
+#   commands:
+#   - docker version
+#   - env
+pipeline:
+    deploy:
+      image: quay.io/honestbee/drone-kubernetes
+      deployment: my-deployment
+      repo: my-registry/my-container
+      container: my-container-name
+      namespace: my-namespace
+      tag: ${DRONE_COMMIT_SHA:8}
+      when:
+        branch: [ master ]
