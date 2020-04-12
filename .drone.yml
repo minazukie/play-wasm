@@ -3,10 +3,13 @@ kind: pipeline
 name: default
 volumes:
 - name: docker_sock
-  path: /var/run/docker.sock
+  host:
+    path: /var/run/docker.sock
 steps:
 - name: test
   image: docker
-
+  volumes:
+    - name: docker_sock
+      path: /var/run/docker.sock
   commands:
   - docker version
