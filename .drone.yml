@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: test
-  image: dockerhub.mizki.one/alpine
+  image: dockerhub.mizki.one/alpines
   commands:
   - echo hello
   - echo world
