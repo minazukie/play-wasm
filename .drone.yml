@@ -4,6 +4,7 @@ name: default
 
 steps:
 - name: test
+  pull: if-not-exists
   image: dockerhub.mizki.one/docker
   volumes:
       - name: docker_sock
