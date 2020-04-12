@@ -13,4 +13,4 @@ steps:
       path: /var/run/docker.sock
   commands:
   - docker version
-  - echo ${HELLO}
+  - env
