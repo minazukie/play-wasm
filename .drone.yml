@@ -17,15 +17,13 @@ name: default
 steps:
   - name: deploy
     user: root
-    image: bitnami/kubectl
+    image: dockerhub.mizki.one/kubectl
     volumes:
     - name: kube
       path: /.kube
     - name: minikube
       path: /.minikube
     commands:
-    - chmod 666 /root
-    - cd / && ls -la
     - kubectl get svc -n prod
       
 volumes:
