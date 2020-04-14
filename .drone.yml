@@ -22,9 +22,9 @@ steps:
     - name: kube
       path: /.kube
     - name: minikube
-      path: /root/.minikube
+      path: /.minikube
     commands:
-    - cd /root && ls -l
+    - ls -l
     - kubectl get svc -n prod
       
 volumes:
