@@ -16,6 +16,6 @@ name: default
 #   - env
 steps:
   - name: deploy
-    image: kubectl:test
+    image: bitnami/kubectl
     commands:
       - kubectl get svc -n prod
