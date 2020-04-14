@@ -16,6 +16,5 @@ name: default
 #   - env
 steps:
   - name: deploy
-    image: bitnami/kubectl
-    commands:
-      - kubectl get svc -n prod
+    image: vallard/drone-kube
+    template: k.yml
