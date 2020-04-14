@@ -14,13 +14,15 @@
 #   commands:
 #   - docker version
 #   - env
-pipeline:
-    deploy:
-      image: quay.io/honestbee/drone-kubernetes
-      deployment: my-deployment
-      repo: my-registry/my-container
-      container: my-container-name
-      namespace: my-namespace
-      tag: ${DRONE_COMMIT_SHA:8}
-      when:
-        branch: [ master ]
+steps:
+  - name: deploy
+    image: sinlead/drone-kubectl
+    settings:
+      kubernetes_server:
+        from_secret: KUBERNETES_SERVER
+      kubernetes_cert:
+        from_secret: KUBERNETES_CERT
+      kubernetes_token:
+        from_secret: KUBERNETES_TOKEN
+    commands:
+      - kubectl
