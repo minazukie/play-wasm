@@ -32,7 +32,7 @@ steps:
 volumes:
 - name: kube
   host:
-    path: /root/.kube  # kubeconfig 挂载位置
+    path: /root/.kube-drone  # kubeconfig 挂载位置
 - name: minikube
   host:
     path: /root/.minikube
