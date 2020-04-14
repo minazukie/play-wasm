@@ -25,4 +25,4 @@ steps:
       kubernetes_token:
         from_secret: KUBERNETES_TOKEN
     commands:
-      - kubectl
+      - kubectl get svc -n drone
