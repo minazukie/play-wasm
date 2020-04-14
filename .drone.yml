@@ -24,3 +24,5 @@ steps:
     repo: minazukie/play-wasm
     container: my-container
     namespace: prod
+    commands:
+    - kubectl apply -f k.yml
