@@ -1,6 +1,6 @@
-# kind: pipeline
+kind: pipeline
 # # type: kubernetes
-# name: default
+name: default
 # volumes:
 # - name: docker_sock
 #   host:
