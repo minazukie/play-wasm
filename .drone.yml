@@ -25,4 +25,4 @@ steps:
       kubernetes_token:
         from_secret: KUBERNETES_TOKEN
     commands:
-      - kubectl get service -n drone
+      - kubectl get all
