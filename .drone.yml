@@ -19,4 +19,4 @@ steps:
     image: vallard/drone-kube
     server: 'https://172.104.76.190:8443'
     template: k.yml
-    namespace: prod
+    namespace: drone
