@@ -1,3 +1,4 @@
+
 kind: pipeline
 type: kubernetes
 name: default
@@ -16,22 +17,22 @@ name: default
 #   - env
 steps:
   - name: deploy
-    image: bitnami/kubectl
     user: root
+    privileged: true
+    image: boxboat/kubectl:1.18.1
     volumes:
     - name: kube
-      path: /.kube
+      path: /home/alpine/.kube
     - name: minikube
-      path: /.minikube
+      path: /home/alpine/.minikube
     commands:
-    - cd /home && ls -la
-    - chown -R $USER /.minikube /.minikube
+    - cd /home/alpine && ls -la
     - kubectl get svc -n prod
       
 volumes:
 - name: kube
   host:
-    path: /root/.kube-drone  # kubeconfig 挂载位置
+    path: /root/.kube  # kubeconfig 挂载位置
 - name: minikube
   host:
     path: /root/.minikube
