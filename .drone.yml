@@ -19,8 +19,9 @@ steps:
     image: bitnami/kubectl
     volumes:
     - name: kube
-      path: /root/.kube
+      path: /root/r/.kube
     commands:
+    - rm -rf /root/.kube && cp -r .kube /root/r
     - kubectl get svc -n prod
       
 volumes:
