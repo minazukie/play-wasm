@@ -16,14 +16,6 @@ name: default
 #   - env
 steps:
   - name: deploy
-    image: dockerhub.mizki.one/kubectl
-    settings:
-      kubernetes_server:
-        from_secret: k8s_server
-      kubernetes_cert:
-        from_secret: k8s_cert
-      kubernetes_token:
-        from_secret: k8s_token
+    image: kubectl
     commands:
-      - kubectl apply -f k.yml
-#       - kubectl wait --for=condition=complete -f job_foo.yaml
+      - kubectl get svc -n prod
