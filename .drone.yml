@@ -21,7 +21,7 @@ steps:
     volumes:
     - name: kube
       path: /.kube
-    - name: kube
+    - name: minikube
       path: /root/.minikube
     commands:
     - cd /root && ls -l
