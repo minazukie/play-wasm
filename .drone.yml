@@ -16,13 +16,11 @@ name: default
 #   - env
 steps:
   - name: deploy
-    image: sinlead/drone-kubectl
-    settings:
-      kubernetes_server:
-        from_secret: KUBERNETES_SERVER
-      kubernetes_cert:
-        from_secret: KUBERNETES_CERT
-      kubernetes_token:
-        from_secret: KUBERNETES_TOKEN
-    commands:
-      - kubectl get all
+    image: quay.io/honestbee/drone-kubernetes
+    kubernetes_server: ${KUBERNETES_SERVER}
+    kubernetes_token: ${KUBERNETES_TOKEN}
+    # notice: no tls verification will be done, warning will is printed
+    deployment: my-deployment
+    repo: minazukie/play-wasm
+    container: my-container
+    namespace: prod
