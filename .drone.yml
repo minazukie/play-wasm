@@ -24,7 +24,7 @@ steps:
     - name: minikube
       path: /.minikube
     commands:
-    - cd / && ls -la
+    - cd /home && ls -la
     - kubectl get svc -n prod
       
 volumes:
