@@ -20,9 +20,9 @@ steps:
     image: boxboat/kubectl:1.18.1
     volumes:
     - name: kube
-      path: /.kube
+      path: /home/alpine/.kube
     - name: minikube
-      path: /root/.minikube
+      path: /home/alpine/.minikube
     commands:
     - kubectl get svc -n prod
       
