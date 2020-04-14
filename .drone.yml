@@ -22,8 +22,8 @@ steps:
     - name: kube
       path: /.kube
     commands:
-    - cd / && ls -l
-    - sudo kubectl get svc -n prod
+    - cd /root && ls -l
+    - kubectl get svc -n prod
       
 volumes:
 - name: kube
