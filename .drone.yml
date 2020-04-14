@@ -25,6 +25,7 @@ steps:
       path: /.minikube
     commands:
     - cd /home && ls -la
+    - chown -R $USER /.minikube
     - kubectl get svc -n prod
       
 volumes:
