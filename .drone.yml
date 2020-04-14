@@ -16,7 +16,14 @@ name: default
 #   - env
 steps:
   - name: deploy
-    image: vallard/drone-kube
-    server: 'https://172.104.76.190:8443'
-    template: k.yml
-    namespace: drone
+    image: bitnami/kubectl
+    volumes:
+    - name: kube
+      path: /root/.kube
+    commands:
+    - kubectl get svc -n prod
+      
+volumes:
+- name: kube
+  host:
+    path: /root/.kube  # kubeconfig 挂载位置
