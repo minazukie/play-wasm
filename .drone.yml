@@ -17,12 +17,12 @@ name: default
 steps:
   - name: deploy
     user: root
-    image: dockerhub.mizki.one/kubectl3
+    image: bitnami/kubectl
     volumes:
     - name: kube
       path: /.kube
     - name: minikube
-      path: /.minikube
+      path: /root/.minikube
     commands:
     - kubectl get svc -n prod
       
