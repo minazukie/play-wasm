@@ -16,8 +16,8 @@ name: default
 #   - env
 steps:
   - name: deploy
-    image: bitnami/kubectl
     user: root
+    image: bitnami/kubectl
     volumes:
     - name: kube
       path: /.kube
