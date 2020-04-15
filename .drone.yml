@@ -17,12 +17,13 @@ name: default
 steps:
   - name: deploy
     image: boxboat/kubectl:1.18.1
-#     volumes:
-#     - name: kube
-#       path: /home/alpine/.kube
-#     - name: minikube
-#       path: /home/alpine/.minikube
+    volumes:
+    - name: kube
+      path: /home/alpine/.kube
+    - name: minikube
+      path: /home/alpine/.minikube
     commands:
+    - ls -la /home/.kube
     - kubectl get svc -n app
       
 volumes:
