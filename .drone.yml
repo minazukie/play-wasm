@@ -29,7 +29,7 @@ steps:
 volumes:
 - name: kube
   host:
-    path: /.kubex  # kubeconfig 挂载位置
+    path: /var/.kube  # kubeconfig 挂载位置
 - name: minikube
   host:
-    path: /.minikubex
+    path: /var/.minikube
