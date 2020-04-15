@@ -23,7 +23,7 @@ steps:
     commands:
     - ls -la /home/alpine/.kube
     - kubectl get svc -n app
-      
+
 volumes:
 - name: kube
   host:
