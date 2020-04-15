@@ -23,7 +23,7 @@ steps:
     - name: minikube
       path: /home/alpine/.minikube
     commands:
-    - kubectl apply -f k.yml
+    - kubectl get svc -n app
       
 volumes:
 - name: kube
