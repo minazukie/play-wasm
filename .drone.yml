@@ -16,8 +16,6 @@ name: default
 #   - env
 steps:
   - name: deploy
-    user: root
-    privileged: true
     image: boxboat/kubectl:1.18.1
     volumes:
     - name: kube
