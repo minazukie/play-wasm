@@ -23,7 +23,8 @@ steps:
 #     - name: minikube
 #       path: /home/alpine/.minikube
     commands:
-    - ls -la /home/alpine/.kube
+#     - ls -la /home/alpine/.kube
+    - kubectl ip
     - kubectl get svc -n app
       
 # volumes:
